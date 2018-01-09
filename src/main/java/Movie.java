@@ -1,7 +1,7 @@
 public class Movie {
-    public String Name;
-    public String Director;
-    public String MovieLength;
+    private String Name;
+    private String Director;
+    private String MovieLength;
 
     public Movie(String name, String director, String movieLength) {
         Name = name;

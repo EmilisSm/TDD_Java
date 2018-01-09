@@ -1,10 +1,11 @@
 public class Employe {
-    public String EmpName;
-    public String Position;
-    public int Wage;
+    private String EmpName;
+    private String Position;
+    private int Wage;
 
     public Employe(String empName, String position, int wage) {
         EmpName = empName;
+        Position = position;
         Wage = wage;
     }
 
