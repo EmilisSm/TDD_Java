@@ -15,22 +15,56 @@ public class CinemaTest {
 
     @Test
     public void printMovieList() throws Exception {
+        MovieList.add(mov);
+        Iterator itr=MovieList.iterator();
+        for(Movie m:MovieList){
+            assertNotNull(m.getName(), MovieList);
+            System.out.println(m.getName() + " : " + m.getDirector() + " : " + m.getMovieLength());
+        }
     }
 
     @Test
     public void deleteMovie() throws Exception {
+        String movNameToDelete = "Pulp Fiction";
+        int i = 0;
+        Movie mov2 = new Movie("Kill Bill", "Quentin Tarantrino", "2h 30min");
+        MovieList.add(mov);
+        MovieList.add(mov2);
+        Iterator itr=MovieList.iterator();
+        for(Movie m:MovieList){
+            if(m.getName() == movNameToDelete){
+                MovieList.remove(i);
+                assertEquals(1, MovieList.size());
+            }
+            i++;
+        }
     }
 
     @Test
     public void printEmployes() throws Exception {
+        EmployeList.add(emp);
+        Iterator itr=EmployeList.iterator();
+        for(Employe e:EmployeList){
+            assertNotNull(e.getEmpName(), EmployeList);
+            System.out.println(e.getEmpName() + " : " + e.getPosition() + " : " + e.getWage() + "$");
+        }
     }
 
     @Test
     public void deleteEmploye() throws Exception {
-    }
-
-    @Test
-    public void printShedule() throws Exception {
+        String empNameDelete = "John";
+        int i = 0;
+        Employe emp1 = new Employe("Alex", "Guard", 450);
+        EmployeList.add(emp);
+        EmployeList.add(emp1);
+        Iterator itr=EmployeList.iterator();
+        for(Employe e:EmployeList){
+            if(e.getEmpName() == empNameDelete){
+                EmployeList.remove(i);
+                assertEquals(1, EmployeList.size());
+            }
+            i++;
+        }
     }
 
     @Test
@@ -69,11 +103,21 @@ public class CinemaTest {
 
         @Test
         public void createEmploye () throws Exception {
+            EmployeList.add(emp);
+            Iterator itr=EmployeList.iterator();
+            while(itr.hasNext()){
+                Assert.assertEquals(itr.next(), emp);
+            }
+
 
         }
 
         @Test
         public void addToShedule () throws Exception {
+        }
+
+        @Test
+        public void printShedule() throws Exception {
         }
 
     }

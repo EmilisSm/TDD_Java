@@ -6,7 +6,7 @@ public class Ticket {
     private int Sector;
     private int Place;
     private String Room;
-    private Date day;
+    private Date Day;
 
     public Ticket(Movie film, int price, int sector, int place, String room) {
         Film = film;
@@ -57,10 +57,10 @@ public class Ticket {
     }
 
     public Date getDay() {
-        return day;
+        return Day;
     }
 
     public void setDay(Date day) {
-        this.day = day;
+        this.Day = day;
     }
 }
